@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((err)=>console.log(err));
 
 
-app.use('api/auth',authRoutes);
-app.use('api/links',linkRoutes);
+app.use('/api/auth',authRoutes);
+app.use('/api/links',linkRoutes);
 
 module.exports =app;
