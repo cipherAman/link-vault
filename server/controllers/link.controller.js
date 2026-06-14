@@ -25,7 +25,7 @@ exports.updateLink = async (req,res) =>{
     try{
         const link = await Link.findOneAndUpdate(
             { _id:req.params.id,user:req.user.id },
-            re.body,
+            req.body,
             {new:true}
         );
         if(!link){
@@ -41,7 +41,7 @@ exports.updateLink = async (req,res) =>{
 
 exports.deleteLink = async (req,res)=>{
     try{
-        const link=Link.findOneAndDelete({_id:req.params.id, user:req.user.id});
+        const link=await Link.findOneAndDelete({_id:req.params.id, user:req.user.id});
         if(!link) return res.status(400).json({message:'Link not found'})
         res.status(200).json({message:'link deleted'});
     } catch (err){
