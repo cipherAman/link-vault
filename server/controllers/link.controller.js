@@ -12,10 +12,11 @@ exports.getLinks = async (req,res) =>{
 exports.addLink = async (req,res) =>{
     try{
         const {title,url,tags} =req.body;
-        const link=await Link.create({ user:req.user, title,url,tags});
+        const link=await Link.create({ user:req.user.id, title,url,tags});
         res.status(201).json(link);
     } catch(err){
-        res,status(500).json({message:'server error'});
+        console.log(err);
+        res.status(500).json({message:'server error'});
     }
 };
 
