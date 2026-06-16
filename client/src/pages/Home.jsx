@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import { useAsyncValue } from "react-router-dom";
 
 const Home=()=>{
-    const {user}=usueAuth();
+    const {user}=useAuth();
     const [links,setLinks] = useState([]);
     const [showModal, setShowModal]= useState(false);
 

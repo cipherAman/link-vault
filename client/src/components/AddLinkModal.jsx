@@ -11,12 +11,12 @@ const AddLinkModal =({onClose,onAdd})=>{
 
 
     const handleSubmit =  async (e)=>{
-        e.prevetDefault();
+        e.preventDefault();
         try{
             await axios.post('/links',{
                 title:form.title,
                 url:form.url,
-                tags:form.tags.spilt(',').map((t)=>t.trim()),
+                tags:form.tags.split(',').map((t)=>t.trim()),
             });
             onAdd();
              onClose();
