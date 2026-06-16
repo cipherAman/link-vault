@@ -1,5 +1,5 @@
 import { useState , useEffect}  from "react";
-import { usueAuth } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import axios from "../api/axios";
 import LinkCard from '../components/LinkCard';
 import AddLinkModal from '../components/AddLinkModal';
